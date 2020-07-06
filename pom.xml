@@ -13,5 +13,6 @@
     <modules>
         <module>hello-world</module>
         <module>mixed-code-hello-world</module>
+        <module>null-safety</module>
     </modules>
 </project>

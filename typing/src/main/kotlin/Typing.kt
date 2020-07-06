@@ -3,7 +3,7 @@ package types
 fun main() {
 
     val employee = Employee("John", "Doe", Department.ENGINEERING)
-    println(personalizedHello(employee.name))
+    println(personalizedHello(employee.name)) // unchecked exception
     println("John's ID: ${employee.hashCode()}")
 
     val contractor = Contractor("Sally", "Smith", "ACME")
@@ -20,7 +20,10 @@ fun main() {
 }
 
 //functions expect non-null variables
+@Throws(IllegalArgumentException::class)
 fun personalizedHello(name: String): String {
+    if(name.none())
+        throw IllegalArgumentException("Name not populated!")
     return "Hello $name"
 }
 

@@ -9,14 +9,13 @@ fun main() {
     val contractor = Contractor("Sally", "Smith", "ACME")
 
     val workers = arrayOf(employee, contractor)
-    workers.forEach {
-        //auto casting! works with IFs as well
-        when (it) {
-            is Contractor -> println("${it.name} is from ${it.company}")
-            is Employee -> println("${it.name} works in ${it.department}")
+    workers.map {
+        when (it) { //auto casting! works with IFs as well
+            is Contractor -> "${it.name} is from ${it.company}"
+            is Employee -> "${it.name} works in ${it.department}"
+            else -> throw IllegalArgumentException("Not valid person!")
         }
-    }
-
+    }.forEach{println(it)}
 }
 
 //functions expect non-null variables

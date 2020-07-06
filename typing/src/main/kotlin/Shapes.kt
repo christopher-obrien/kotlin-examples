@@ -19,4 +19,10 @@ class Square(length: Int) : Rectangle(length, length) {
     final override fun perimeter(): Int {
         return  height * 4
     }
+
+    fun smallerSquares(numberOfSquares: Int = 4): Array<Square> {
+        if(numberOfSquares in arrayOf(2, 3, 5))
+            throw IllegalArgumentException()
+        return arrayOf(Square(height), Square(height), Square(height), Square(height))
+    }
 }

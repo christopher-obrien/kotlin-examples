@@ -7,13 +7,14 @@ fun main() {
     println("John's ID: ${employee.hashCode()}")
 
     val contractor = Contractor("Sally", "Smith", "ACME")
-    val workers = arrayOf(employee, contractor)
 
+    val workers = arrayOf(employee, contractor)
     workers.forEach {
-        if (it is Contractor)
-            println("${it.name} is from ${it.company}")
-        else if(it is Employee)
-            println("${it.name} works in ${it.department}")
+        //auto casting! works with IFs as well
+        when (it) {
+            is Contractor -> println("${it.name} is from ${it.company}")
+            is Employee -> println("${it.name} works in ${it.department}")
+        }
     }
 
 }

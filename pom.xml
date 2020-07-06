@@ -14,5 +14,6 @@
         <module>hello-world</module>
         <module>mixed-code-hello-world</module>
         <module>null-safety</module>
+        <module>typing</module>
     </modules>
 </project>
